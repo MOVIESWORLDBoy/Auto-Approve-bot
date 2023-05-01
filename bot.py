@@ -14,7 +14,7 @@ app = Client(
 )
 
 gif = [
-    'https://graph.org/file/47051f5ea01f1341f7900.jpg'
+    'https://telegra.ph/file/2710a727db8c0fd0a2cf0.mp4'
 ]
 
 
@@ -28,7 +28,7 @@ async def approve(_, m : Message):
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
         img = random.choice(gif)
-        await app.send_video(kk.id,img, "**👋 HELLO {}!\n\nYOUR REQUEST TO JOIN {} HAS BEEN APPROVED ☑️. \n\nTHANKS FOR JOINING \n Send /start to know more.**".format(m.from_user.mention, m.chat.title))
+        await app.send_video(kk.id,img, "**👋 HELLO {}!\n\nYOUR REQUEST TO JOIN {} HAS BEEN APPROVED ☑️. \n\nThanks For Joining \n /start to know more.**".format(m.from_user.mention, m.chat.title))
 
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
